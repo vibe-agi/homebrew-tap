@@ -1,0 +1,51 @@
+name: Test Tap
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  formula:
+    name: Test ${{ matrix.formula }}
+    runs-on: macos-15
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        formula:
+          - hideout
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+      HOMEBREW_NO_ASK: "1"
+      HOMEBREW_NO_INSTALL_CLEANUP: "1"
+    steps:
+      - name: Check out tap
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5b
+
+      - name: Tap checked-out repository
+        run: brew tap vibe-agi/tap "$GITHUB_WORKSPACE"
+
+      - name: Audit formula
+        run: brew audit --strict --online "vibe-agi/tap/${{ matrix.formula }}"
+
+      - name: Install formula
+        run: brew install --verbose "vibe-agi/tap/${{ matrix.formula }}"
+
+      - name: Test formula
+        run: brew test "vibe-agi/tap/${{ matrix.formula }}"
+
+      - name: Verify Hideout package boundary
+        if: matrix.formula == 'hideout'
+        run: |
+          test ! -e "$HOME/.hideout"
+          hideout version
+          hideout package verify "$(brew --prefix hideout)"
+
+      - name: Uninstall formula
+        run: brew uninstall "${{ matrix.formula }}"
