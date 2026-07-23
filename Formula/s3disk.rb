@@ -5,23 +5,23 @@ class S3disk < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/vibe-agi/s3disk/releases/download/v0.1.0-rc.3/s3disk-v0.1.0-rc.3-darwin-arm64.tar.gz"
-      sha256 "802ed30c71dc4f9b851b53671c548b3c3ed96977d07707665a9c9ef090d699e1"
+      url "https://github.com/vibe-agi/s3disk/releases/download/v0.1.0-rc.4/s3disk-v0.1.0-rc.4-darwin-arm64.tar.gz"
+      sha256 "9c821c31136279ff399495d446c54a67182a77be92dea0be65377795191d15c4"
     end
     on_intel do
-      url "https://github.com/vibe-agi/s3disk/releases/download/v0.1.0-rc.3/s3disk-v0.1.0-rc.3-darwin-amd64.tar.gz"
-      sha256 "fd6381c93e8a1006c2c33a855054b096f6e9c44c649ade8b09d2fbcfccb84834"
+      url "https://github.com/vibe-agi/s3disk/releases/download/v0.1.0-rc.4/s3disk-v0.1.0-rc.4-darwin-amd64.tar.gz"
+      sha256 "56eb9804b344d6783c56ab454431391e99cbaa909ee77bd61ee4a0ca91c847ce"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/vibe-agi/s3disk/releases/download/v0.1.0-rc.3/s3disk-v0.1.0-rc.3-linux-arm64.tar.gz"
-      sha256 "2abc7154263c786553bc5400eb0a7bc0b7829f4f0634460331e9c26e2557d95e"
+      url "https://github.com/vibe-agi/s3disk/releases/download/v0.1.0-rc.4/s3disk-v0.1.0-rc.4-linux-arm64.tar.gz"
+      sha256 "5097e254db8fa4ad0612b69c9fac7e823f7d8c9bfe0f29a12d71d6ad5420e141"
     end
     on_intel do
-      url "https://github.com/vibe-agi/s3disk/releases/download/v0.1.0-rc.3/s3disk-v0.1.0-rc.3-linux-amd64.tar.gz"
-      sha256 "3e9e81e87a919399baf0d635c4a0bf6d71ebedcd7311d7909ce28d9332111d34"
+      url "https://github.com/vibe-agi/s3disk/releases/download/v0.1.0-rc.4/s3disk-v0.1.0-rc.4-linux-amd64.tar.gz"
+      sha256 "f1d53a1f26c93614697e8e12fc63ea21d83163937b06a7f179e533dfd36f578b"
     end
   end
 
