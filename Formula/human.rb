@@ -1,6 +1,7 @@
 class Human < Formula
   desc "Use a human as an OpenAI/Anthropic-compatible model endpoint"
   homepage "https://github.com/vibe-agi/human"
+  version "0.1.0"
   license "Apache-2.0"
 
   on_macos do
