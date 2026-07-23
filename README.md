@@ -22,6 +22,20 @@ brew install <formula>
 | Formula | Project | Platform |
 | --- | --- | --- |
 | `hideout` | [Hideout](https://github.com/vibe-agi/hideout) | macOS arm64 |
+| `s3disk` | [s3disk](https://github.com/vibe-agi/s3disk) | macOS/Linux, amd64/arm64 |
+
+### s3disk
+
+s3disk shares one or more local workspaces through S3-compatible storage and
+exposes them read-only on other computers through a local WebDAV or FUSE view.
+
+```bash
+brew install vibe-agi/tap/s3disk
+```
+
+s3disk is currently a pre-1.0 engineering preview. Review its
+[platform support and current boundaries](https://github.com/vibe-agi/s3disk#platform-support)
+before embedding it in a product.
 
 ### Hideout
 
