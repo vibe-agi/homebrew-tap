@@ -22,7 +22,23 @@ brew install <formula>
 | Formula | Project | Platform |
 | --- | --- | --- |
 | `hideout` | [Hideout](https://github.com/vibe-agi/hideout) | macOS arm64 |
+| `human` | [Human](https://github.com/vibe-agi/human) | macOS/Linux, amd64/arm64 |
 | `s3disk` | [s3disk](https://github.com/vibe-agi/s3disk) | macOS/Linux, amd64/arm64 |
+
+### Human
+
+Human exposes a person as an OpenAI, Anthropic, and Responses-compatible model
+endpoint, with a browser inbox for replies, native tool calls, Tasks, and
+reviewed workspace changes.
+
+```bash
+brew install vibe-agi/tap/human
+human local --workspace ~/human-workspace
+```
+
+The model URL and private browser login URL are printed at startup. Human
+currently publishes runtime-tested macOS and Linux binaries for amd64 and
+arm64.
 
 ### s3disk
 
