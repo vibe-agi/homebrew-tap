@@ -1,8 +1,8 @@
 class Hideout < Formula
   desc "Run AI agents and untrusted CLIs in a local VM"
   homepage "https://github.com/vibe-agi/hideout"
-  url "https://github.com/vibe-agi/hideout/releases/download/v0.1.0-alpha.1/hideout-v0.1.0-alpha.1-darwin-arm64.tar.gz"
-  sha256 "9a35bbb70b298456dd7e001a1c22825cdff180309306e8a27271e995a81473b4"
+  url "https://github.com/vibe-agi/hideout/releases/download/v0.1.0-alpha.2/hideout-v0.1.0-alpha.2-darwin-arm64.tar.gz"
+  sha256 "464cf3e96108621c1dc92aef794e83de92c5385086620771da5b47bf86693a76"
   license "Apache-2.0"
 
   depends_on arch: :arm64
@@ -13,7 +13,10 @@ class Hideout < Formula
   # helpers must retain their execute bits so Hideout can copy them into Lima.
   skip_clean "bin/hideout-dns-stub-linux-arm64",
              "bin/hideout-hostfsd-linux-arm64",
-             "bin/hideout-shim-linux-arm64"
+             "bin/hideout-session-supervisor-linux-arm64",
+             "bin/hideout-workspace-portal-linux-arm64",
+             "bin/hideout-shim-linux-arm64",
+             "bin/tun2socks-linux-arm64"
 
   def install
     package_root = buildpath
@@ -31,15 +34,21 @@ class Hideout < Formula
 
   def caveats
     <<~EOS
-      Hideout is installed but not initialized. Create the supported default
-      profile with:
+      Hideout is installed but not configured. Review and create the supported
+      default configuration with:
 
-        hideout init --template dev --profile default --backend lima \\
-          --network direct --runtime developer-standard --no-input
+        hideout setup
+        hideout doctor
+        cd /path/to/project
+        hideout run -- git status --short
 
-      First use downloads the retained developer runtime separately; expect
+      Setup does not start a VM or download the runtime. First run downloads
+      the retained developer runtime separately; expect
       approximately 1 GB. Hideout user state remains under ~/.hideout and is
-      preserved by brew upgrade and brew uninstall.
+      preserved by brew upgrade and brew uninstall. To inspect or remove that
+      durable state separately, run:
+
+        hideout help uninstall
     EOS
   end
 
