@@ -1,8 +1,8 @@
 class Hideout < Formula
   desc "Run AI agents and untrusted CLIs in a local VM"
   homepage "https://github.com/vibe-agi/hideout"
-  url "https://github.com/vibe-agi/hideout/releases/download/v0.1.0-alpha.2/hideout-v0.1.0-alpha.2-darwin-arm64.tar.gz"
-  sha256 "464cf3e96108621c1dc92aef794e83de92c5385086620771da5b47bf86693a76"
+  url "https://github.com/vibe-agi/hideout/releases/download/v0.1.0-alpha.3/hideout-v0.1.0-alpha.3-darwin-arm64.tar.gz"
+  sha256 "61807ce60d7a037139713cffe475f492ee8e60cced56674ba3f0be0580e65050"
   license "Apache-2.0"
 
   depends_on arch: :arm64
