@@ -1,6 +1,22 @@
 # Vibe AGI Homebrew Tap
 
-Official Homebrew formulae for Vibe AGI projects.
+Official Homebrew formulae and casks for Vibe AGI projects.
+
+## Install ViberMate
+
+ViberMate is distributed as a signed and notarized universal macOS app:
+
+```bash
+brew install --cask vibe-agi/tap/vibermate
+```
+
+Open ViberMate from Applications. To use `vibermate` in Terminal, open
+**Settings → General → Terminal command** in the app and choose **Install**.
+Uninstalling the cask preserves your settings and runtime data.
+
+ViberMate 是经过签名和 Apple 公证的通用 macOS App。安装后从“应用程序”中打开；
+如需在终端使用 `vibermate` 命令，请在 App 内打开
+**设置 → 常规 → 终端命令**并选择**安装**。卸载 App 时会保留设置和运行数据。
 
 ## Install A Formula
 
@@ -24,6 +40,12 @@ brew install <formula>
 | `hideout` | [Hideout](https://github.com/vibe-agi/hideout) | macOS arm64 |
 | `human` | [Human](https://github.com/vibe-agi/human) | macOS/Linux, amd64/arm64 |
 | `s3disk` | [s3disk](https://github.com/vibe-agi/s3disk) | macOS/Linux, amd64/arm64 |
+
+## Available Casks
+
+| Cask | Project | Platform |
+| --- | --- | --- |
+| `vibermate` | [ViberMate](https://github.com/vibe-agi/vibermate) | macOS 14+, universal |
 
 ### Human
 
