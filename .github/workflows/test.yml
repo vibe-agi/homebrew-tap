@@ -34,7 +34,16 @@ jobs:
         run: brew tap vibe-agi/tap "$GITHUB_WORKSPACE"
 
       - name: Audit formula
-        run: brew audit --strict --online "vibe-agi/tap/${{ matrix.formula }}"
+        env:
+          FORMULA: ${{ matrix.formula }}
+        run: |
+          if [[ "$FORMULA" == "human" ]]; then
+            # The release archives end in arm64/amd64. Human needs an explicit
+            # version so Homebrew does not install it as version 64.
+            brew audit --strict --online --except=version "vibe-agi/tap/$FORMULA"
+          else
+            brew audit --strict --online "vibe-agi/tap/$FORMULA"
+          fi
 
       - name: Install formula
         run: brew install --verbose "vibe-agi/tap/${{ matrix.formula }}"
