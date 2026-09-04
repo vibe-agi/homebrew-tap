@@ -77,6 +77,8 @@ jobs:
         run: brew tap vibe-agi/tap "$GITHUB_WORKSPACE"
 
       - name: Audit cask
+        env:
+          HOMEBREW_GITHUB_API_TOKEN: ${{ github.token }}
         run: brew audit --cask --strict --online vibe-agi/tap/vibermate
 
       - name: Install cask
