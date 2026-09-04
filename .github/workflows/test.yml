@@ -51,3 +51,35 @@ jobs:
 
       - name: Uninstall formula
         run: brew uninstall "${{ matrix.formula }}"
+
+  cask:
+    name: Test ViberMate cask
+    runs-on: macos-15
+    timeout-minutes: 30
+    env:
+      HOMEBREW_NO_AUTO_UPDATE: "1"
+      HOMEBREW_NO_ASK: "1"
+      HOMEBREW_NO_INSTALL_CLEANUP: "1"
+    steps:
+      - name: Check out tap
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+
+      - name: Tap checked-out repository
+        run: brew tap vibe-agi/tap "$GITHUB_WORKSPACE"
+
+      - name: Audit cask
+        run: brew audit --cask --strict --online vibe-agi/tap/vibermate
+
+      - name: Install cask
+        run: brew install --cask --verbose vibe-agi/tap/vibermate
+
+      - name: Verify installed app
+        run: |
+          test -d /Applications/ViberMate.app
+          codesign --verify --deep --strict /Applications/ViberMate.app
+          spctl --assess --type execute /Applications/ViberMate.app
+
+      - name: Uninstall cask
+        run: |
+          brew uninstall --cask vibermate
+          test ! -e /Applications/ViberMate.app
