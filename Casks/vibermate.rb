@@ -1,6 +1,6 @@
 cask "vibermate" do
-  version "0.1.2"
-  sha256 "eb5473f0f8c3b37bc339b08aec127f71502f86d3d4bde9091f9fac5886833b38"
+  version "0.1.3"
+  sha256 "bc1857580bb9abd7a8c5a4db63d788661d43a675cc35fdcb49761ef99d0d4a11"
 
   url "https://github.com/vibe-agi/vibermate/releases/download/v#{version}/ViberMate_#{version}_universal.dmg"
   name "ViberMate"
@@ -14,7 +14,7 @@ cask "vibermate" do
   uninstall quit: "io.vibermate.desktop"
 
   caveats <<~EOS
-    Open ViberMate, then use Settings → General → Terminal command to make the
+    Open ViberMate, then use Settings → Access & launch → Terminal command to make the
     `vibermate` command available in Terminal.
 
     Homebrew removes the app but preserves ViberMate settings and runtime data.
