@@ -11,12 +11,19 @@ brew install --cask vibe-agi/tap/vibermate
 ```
 
 Open ViberMate from Applications. To use `vibermate` in Terminal, open
-**Settings → General → Terminal command** in the app and choose **Install**.
+**Settings → Access & launch → Terminal command** in the app and follow the setup prompt.
 Uninstalling the cask preserves your settings and runtime data.
 
 ViberMate 是经过签名和 Apple 公证的通用 macOS App。安装后从“应用程序”中打开；
 如需在终端使用 `vibermate` 命令，请在 App 内打开
-**设置 → 常规 → 终端命令**并选择**安装**。卸载 App 时会保留设置和运行数据。
+**设置 → 接入与启动 → 终端命令**并按提示完成设置。卸载 App 时会保留设置和运行数据。
+
+To update an existing installation / 更新已安装的版本：
+
+```bash
+brew update
+brew upgrade --cask vibe-agi/tap/vibermate
+```
 
 ## Install A Formula
 
