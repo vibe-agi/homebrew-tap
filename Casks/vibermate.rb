@@ -14,11 +14,6 @@ cask "vibermate" do
   uninstall quit: "io.vibermate.desktop"
 
   caveats <<~EOS
-    ViberMate 0.1.17 cannot open data created by 0.1.16 or earlier. Before the
-    first launch, quit ViberMate and move
-      ~/Library/Application Support/io.vibermate.desktop
-    somewhere else to keep it; 0.1.17 then starts with empty data.
-
     Open ViberMate, then use Settings → Access & launch → Terminal command to make the
     `vibermate` command available in Terminal.
 
