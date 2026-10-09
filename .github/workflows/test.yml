@@ -87,8 +87,12 @@ jobs:
       - name: Verify installed app
         run: |
           test -d /Applications/ViberMate.app
+          sw_vers
+          brew info --cask --json=v2 vibe-agi/tap/vibermate
           codesign --verify --deep --strict /Applications/ViberMate.app
-          spctl --assess --type execute /Applications/ViberMate.app
+          codesign --display --verbose=4 /Applications/ViberMate.app
+          spctl --status
+          spctl --assess --type execute --verbose=4 /Applications/ViberMate.app
 
       - name: Uninstall cask
         run: |
