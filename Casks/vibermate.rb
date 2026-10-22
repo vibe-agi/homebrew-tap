@@ -1,6 +1,6 @@
 cask "vibermate" do
-  version "0.1.35"
-  sha256 "b3f7e1b0e50ad81492e332ffcb6c1d55e35b6e261360b7d8d860bfada302c490"
+  version "0.1.36"
+  sha256 "a945c61410108a91f9feb4f0f01c803caa3bbd118d5cbc3dc8cfd1bf78de778d"
 
   url "https://github.com/vibe-agi/vibermate/releases/download/v#{version}/ViberMate_#{version}_universal.dmg"
   name "ViberMate"
